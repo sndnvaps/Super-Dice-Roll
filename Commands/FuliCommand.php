@@ -21,7 +21,7 @@ class FuliCommand extends Command
     protected $name = 'fuli';
     protected $description = 'search for fuli magnet';
     protected $usage = '/fuli <CarNo.> ';
-    protected $version = '1.0.0';
+    protected $version = '1.0.1';
     protected $public = true;
 
      //set time zone
@@ -30,38 +30,37 @@ private function SearchCode($code) {
 	$bthave = 'http://www.bthave.net/search/';
 	$new_code = '';
 	$html_url = '';
-	$reg_str = "magnet[^ <'\"]*";
+	$reg_str = "/magnet[^ <'\"]*/i";
 
-	//replace 'blank space' with '%20'
-	if(eregi(' ', $code, $matches)) {
-		str_replace(' ', '%20', $code);
-		$new_code = $code;
-	}
-	if(empty($new_code)) {
-		$html_url = $bthave . $code;
-	} else {
-		$html_url = $bthave . $new_code;
-	}
-	
+	$magnet_result = array();
+	$html_url = $bthave . $code;
+	//get the contents from website 
 	$html = file_get_contents($html_url);
-	if(eregi($reg_str, $html,$matches)) {
-		// do nothing
+
+	if(preg_match_all($reg_str,$html,$matches_t)) {
+		echo "";
 	} else {
-		return " ";
+		echo "Not found! Try another code";
 	}
-	
-	foreach ($matches as $k) {
-  		if(!empty($k)) {
-    		return $k;
+
+	//split the result from array( $v => $k { array($vv)} => array{$v};
+	foreach ($matches_t as $k => $v ) {
+		if(is_array($v)) {
+			foreach($v as $magnet_v) {
+				array_push($magnet_result,$magnet_v);
+			}
   		}
 	}
+
+	if(is_array($magnet_result)) {
+		return $magnet_result[mt_rand(2, count($magnet_result)-1)];
+	}
+
+	return "Not found! Try another code";
 }
 
 
-
-
-
-// date_default_timezone_set('UTC+1');
+// 
     /**#@-*/
     /**
      * {@inheritdoc}
@@ -74,7 +73,7 @@ private function SearchCode($code) {
 	$text = $message->getText(true);
 	if(empty($text)) {
 		$text = 'Gave me you code! Old driver:
-			command: /fuli <code>
+				command: /fuli <code>
 			';
 	} else {
 	$magnet = $this->SearchCode($text);
