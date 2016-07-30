@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a6b69c40e6cb1bd7321a18adacf08cb3",
-    "content-hash": "fa1f690ec9bae9cd938b90fad9e39a62",
+    "hash": "4e8cb33aa63beda34e9a353ecd4ec625",
+    "content-hash": "ed8da7de3b171116a65ad9ede4013031",
     "packages": [
         {
             "name": "longman/telegram-bot",
