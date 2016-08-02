@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4e8cb33aa63beda34e9a353ecd4ec625",
-    "content-hash": "ed8da7de3b171116a65ad9ede4013031",
+    "hash": "af1c169a5a44d733a1c0f73125e0da1b",
+    "content-hash": "49ada3e95558c7144fb62bc1ed8aeb0d",
     "packages": [
         {
             "name": "longman/telegram-bot",
-            "version": "0.29",
+            "version": "0.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akalongman/php-telegram-bot.git",
-                "reference": "999ee2e7b154be1c9fb2f6ea9cc3d1d640303a80"
+                "reference": "6312cc2abe6effedb6af1e12cb1b79cf1edf0728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akalongman/php-telegram-bot/zipball/999ee2e7b154be1c9fb2f6ea9cc3d1d640303a80",
-                "reference": "999ee2e7b154be1c9fb2f6ea9cc3d1d640303a80",
+                "url": "https://api.github.com/repos/akalongman/php-telegram-bot/zipball/6312cc2abe6effedb6af1e12cb1b79cf1edf0728",
+                "reference": "6312cc2abe6effedb6af1e12cb1b79cf1edf0728",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "bot",
                 "telegram"
             ],
-            "time": "2016-03-22 18:41:50"
+            "time": "2016-02-15 10:44:45"
         }
     ],
     "packages-dev": [],
