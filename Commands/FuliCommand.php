@@ -27,7 +27,7 @@ class FuliCommand extends Command
      //set time zone
 
 private function SearchCode($code) {
-	$bthave = 'http://www.bthave.net/search/';
+	$bthave = 'http://www.btmeet.org/search/';
 	$new_code = '';
 	$html_url = '';
 	$reg_str = "/magnet[^ <'\"]*/i";
